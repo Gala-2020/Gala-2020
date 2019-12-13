@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keyword" content="gala,enib,nuit,2019,diplome,informations,tarifs,navettes">
+    <meta name="description" content="Informations sur les tarifs et les navettes." />
+    <title>Informations - Nuit de l'enib</title>
+    <link rel="icon" type="image/png" href="" />
+    <link rel="stylesheet" href="css/default.css">
+    <link href="https://fonts.googleapis.com/css?family=Mukta+Mahee:400,500" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="semantic-ui/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="css/partners.css">
+</head>
+
+<body ng-controller="DefaultCtrl">
+    <div class="ui sidebar huge inverted menu vertical">
+        <div class="item">
+            <div class="header">Navigations</div>
+            <div class="menu">
+                <a href="home.html" class="item">Accueil <i class="icon home"></i></a>
+            </div>
+            <div class="menu">
+                <a href="day.html" class="item">Journée <i class="icon calendar"></i></a>
+            </div>
+            <div class="menu">
+                <a href="team.html" class="item">L'équipe <i class="icon users"></i></a>
+            </div>
+            <div class="menu">
+                <a href="https://leeap.cash/billeterie/" class="item">Billetterie <i class="icon ticket"></i></a>
+            </div>
+            <div class="menu">
+                <a href="partners.html" class="item">Partenaires <i class="icon handshake"></i></a>
+            </div>
+            <div class="menu">
+                <a href="cashless.html" class="item">Cashless <i class="icon dollar sign"></i></a>
+            </div>
+            <div class="menu">
+                <a href="info.html" class="item">Infos pratiques<i class="icon info circle"></i></a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+
+    </div>
+    <div class="pusher">
+        <nav class="header-nav-min">
+            <a class="btn-header"><i class="icon sidebar"></i></a>
+        </nav>
+        <header>
+            <a href="home.html" class="header-title">
+                <h1>Nuit de l'enib</h1>
+            </a>
+            <nav class="header-nav-max">
+                <a href="day.html">Journée</a>
+                <a href="team.html">L'équipe</a>
+                <a href="store.html">Billetterie</a>
+                <a href="partners.html">Partenaires</a>
+                <a href="cashless.html">Cashless</a>
+                <a href="info.html" class="is-active">Infos pratiques</a>
+            </nav>
+        </header>
+        <div class="content">
+            <h1 style="width:100vw;text-align: center;">Informations pratiques</h1>
+        </div>
+        <div class="content">
+
+            <link rel="stylesheet" type="text/css" href="semantic-ui/semantic.min.css">
+            <div class="content-sizer">
+                <div class="ui very padded container segment">
+                    <h1>Tarif des consommations (Fin des ventes d'alcool à 1h) </h1>
+                    <div class="ui bulleted list">
+                        <div class="item">Champagnes de la Maison Cheurlin
+                            <div class="list">
+                                <div class="item">Prestige ( 30 €)</div>
+                                <div class="item">Brut ( 20€ )</div>
+                                <div class="item">Demi-sec ( 20€ )</div>
+                                <div class="item">Rosée ( 20€ )</div>
+                            </div>
+                        </div>
+                        <div class="item">Bière
+                            <div class="list">
+                                <div class="item">Coreff blonde ( 2€ le demi , 4€ la pinte )</div>
+                            </div>
+                        </div>
+                        <div class="item">Softs ( 1€ )
+                            <div class="list">
+                                <div class="item">Coca-Cola</div>
+                                <div class="item">Ice-Tea</div>
+                                <div class="item">Orangina</div>
+                                <div class="item">Minuit Maid</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            Consigne (1€)
+                        </div>
+                    </div>
+                </div>
+                <div class="ui stackable two column grid">
+                    <div class="column">
+                        <div class="ui very padded  container segment">
+                            <h1>Navette aller</h1>
+                            <ul>
+                                <li>21h00: ENIB – Espace Kéraudy</li>
+                                <li>21h15: Liberté – Fort Montbarey – ENIB – Espace Kéraudy</li>
+                                <li>22h00: ENIB – Espace Kéraudy</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="ui very padded  container segment">
+                            <h1>Navette retour</h1>
+                            <ul>
+                                <li>3h00: Espace Kéraudy - ENIB</li>
+                                <li>4h00: Espace Kéraudy - ENIB</li>
+                                <li>4h45: Espace Kéraudy – Fort Montbarey – Liberté</li>
+                            </ul>
+                            <p>Heures d'été indiquées <a href="https://www.google.com/search?client=firefox-b-d&q=heure+d%27%C3%A9t%C3%A9+2019" target="_blank">(+ d'info)</a></p>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div id="map" style="width:100%;height:400px;">
+                </div>
+
+                <script>
+                    function myMap() {
+                        var myCenter = new google.maps.LatLng(48.3434960, -4.722101);
+                        var mapProp = {
+                            center: myCenter,
+                            zoom: 16,
+                        };
+                        var mapCanvas = document.getElementById("map");
+                        var map = new google.maps.Map(document.getElementById("map"), mapProp);
+                        var marker = new google.maps.Marker({
+                            position: myCenter,
+                        });
+                        marker.setMap(map);
+                    }
+                </script>
+
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpYwSF0SBltKc6R2IH6t2bDfZX89sC6Xk&callback=myMap"></script>
+            </div>
+        </div>
+        <footer>
+            <div class="ui stackable thre equal width grid">
+                <div class="column"><i class="icon copyright"></i> 2019 Nuit de l'enib</div>
+                <div class="column">
+                    <a target="_blank" href="https://www.facebook.com/Nuit-de-lENIB-1672448326336009/">
+                        <i class="icon grey facebook"></i>
+                    </a> |
+                    <a class="icone icone-mail" target="_blank" href="mailto:nuitenib@enib.fr">
+                        <i class="icon grey mail"></i>
+                    </a> |
+                    <a class="icone icone-enib" target="_blank" href="https://enib.net/">
+                        <svg height="1.18em" width="2.18em">
+                            <text x="0" y="16">ENIB</text>
+                        </svg>
+                    </a>
+                </div>
+                <div class="column font-standard"><a href="http://www.oscarmarietaillefer.com/" title="Page du créateur"
+                        target="_blank">By Padeon</a></div>
+            </div>
+        </footer>
+    </div>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="semantic-ui/semantic.min.js"></script>
+    <script type="text/javascript" src="js/function.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135289786-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-135289786-1');
+    </script>
+</body>
+
+</html>
